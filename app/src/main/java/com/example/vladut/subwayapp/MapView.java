@@ -45,8 +45,8 @@ public class MapView extends View {
         AddArrayListValues();
         for(int i=0; i<points.size()-1; i++)
         {
-            canvas.drawCircle(points.get(i).x, points.get(i).y, 20, myPaint);
-            canvas.drawLine(points.get(i).x, points.get(i).y, points.get(i+1).x, points.get(i+1).y, myPaint);
+            canvas.drawCircle(points.get(i).x, points.get(i).y, 20, myPaint); //drawing the stations
+            canvas.drawLine(points.get(i).x, points.get(i).y, points.get(i+1).x, points.get(i+1).y, myPaint); //drawing the road between stations
         }
 
 
