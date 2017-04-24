@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.*;
 
 /**
- * Created by Vladut on 4/19/2017.
+ * Created by Vladut on 4/19/2017
  */
 
 public class MapView extends View {
