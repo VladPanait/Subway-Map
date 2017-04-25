@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
  */
 
 public class DBHelper extends SQLiteOpenHelper {
-    public DBHelper(Context context, String name,CursorFactory factory, int version)
+    public DBHelper(Context context, String name, CursorFactory factory, int version)
     {
         super(context, name, factory, version);
     }
