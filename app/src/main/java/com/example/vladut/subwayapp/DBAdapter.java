@@ -4,14 +4,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.PointF;
 
 /**
  * Created by Vladut on 4/25/2017.
  */
 
 public class DBAdapter {
-    private static final String TABLE_POINTS = "points";
+    private static final String TABLE_STATIONS = "STATIONS";
     private static final String COLUMN_ID = "ID";
 
     private static final String DB_NAME = "map.db";
@@ -19,7 +18,7 @@ public class DBAdapter {
 
     // Database creation sql statement
     public static final String DB_CREATE = "create table "
-            + TABLE_POINTS + "( " + COLUMN_ID
+            + TABLE_STATIONS + "( " + COLUMN_ID
             + " integer primary key autoincrement, " + "X integer,"
             + " Y integer);";
 
@@ -43,21 +42,26 @@ public class DBAdapter {
         myDB.close();
     }
 
-    public void insertPoint(PointF P)
+    public void insertStation(SubwayStation station)
     {
         ContentValues values = new ContentValues();
 
-        values.put("X", P.x);
-        values.put("Y", P.y);
+        values.put("X", station.getP().x);
+        values.put("Y", station.getP().y);
 
         myDB.insert(DB_NAME, null, values);
     }
 
-    public void deletePoint(int ID)
+    public void deleteStation(SubwayStation station)
     {
-        myDB.delete(DB_NAME, COLUMN_ID + " = " + ID, null);
-        System.out.println("Point having the id: " + ID + ", deleted!");
+        myDB.delete(DB_NAME, COLUMN_ID + " = " + station.getID(), null);
+        System.out.println("Station having the id: " + station.getID() + ", deleted!");
     }
 
+//    public ArrayList<PointF> getStations()
+//    {
+//        ArrayList<PointF> allStations = new ArrayList<>();
+//        Cursor cursor = myDB.rawQuery("SELECT * FROM STATIONS ");
+//    }
 
 }

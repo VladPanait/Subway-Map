@@ -20,6 +20,9 @@ public class DBHelper extends SQLiteOpenHelper {
     {
         db.execSQL(DBAdapter.DB_CREATE);
     }
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {}
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion)
+    {
+
+    }
 
 }

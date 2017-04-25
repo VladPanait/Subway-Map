@@ -15,7 +15,7 @@ import java.util.*;
 public class MapView extends View {
     Paint myPaint = new Paint();
 
-    ArrayList<PointF> points = new ArrayList<>();
+    ArrayList<SubwayStation> stations = new ArrayList<>();
 
 
     public MapView(Context context) {
@@ -28,24 +28,25 @@ public class MapView extends View {
 
     public void AddArrayListValues()
     {
-        points.add(new PointF(100, 100));
-        points.add(new PointF(200, 200));
-        points.add(new PointF(300, 300));
-        points.add(new PointF(300, 400));
-        points.add(new PointF(400, 500));
-        points.add(new PointF(500, 600));
-        points.add(new PointF(600, 700));
-        points.add(new PointF(700, 800));
+        stations.add(new SubwayStation(new PointF(100, 100), 1));
+        stations.add(new SubwayStation(new PointF(200, 200), 2));
+        stations.add(new SubwayStation(new PointF(300, 300), 3));
+        stations.add(new SubwayStation(new PointF(300, 400), 4));
+        stations.add(new SubwayStation(new PointF(400, 500), 5));
+        stations.add(new SubwayStation(new PointF(500, 600), 6));
+        stations.add(new SubwayStation(new PointF(600, 700), 7));
+        stations.add(new SubwayStation(new PointF(700, 800), 8));
     }
 
 
     @Override
     public void onDraw(Canvas canvas) {
-        points.clear();
+        stations.clear();
         AddArrayListValues();
-        for(int i=0; i<points.size()-1; i++) {
-            canvas.drawCircle(points.get(i).x, points.get(i).y, 20, myPaint); //drawing the stations
-            canvas.drawLine(points.get(i).x, points.get(i).y, points.get(i + 1).x, points.get(i + 1).y, myPaint); //drawing the road between stations
+        for(int i=0; i<stations.size()-1; i++) {
+
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint); //drawing the stations
+            canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint); //drawing the road between stations
         }
 
     }
