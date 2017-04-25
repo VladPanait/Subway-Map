@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.*;
 
 /**
- * Created by Vladut on 4/19/2017
+ * Created by Vladut on 4/19/2017...
  */
 
 public class MapView extends View {
@@ -43,12 +43,10 @@ public class MapView extends View {
     public void onDraw(Canvas canvas) {
         points.clear();
         AddArrayListValues();
-        for(int i=0; i<points.size()-1; i++)
-        {
+        for(int i=0; i<points.size()-1; i++) {
             canvas.drawCircle(points.get(i).x, points.get(i).y, 20, myPaint); //drawing the stations
-            canvas.drawLine(points.get(i).x, points.get(i).y, points.get(i+1).x, points.get(i+1).y, myPaint); //drawing the road between stations
+            canvas.drawLine(points.get(i).x, points.get(i).y, points.get(i + 1).x, points.get(i + 1).y, myPaint); //drawing the road between stations
         }
-
 
     }
 
