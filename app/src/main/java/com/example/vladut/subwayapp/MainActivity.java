@@ -1,31 +1,31 @@
 package com.example.vladut.subwayapp;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    DBHelper myDB;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    ShowMapViewFragment();
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    HideMapViewFragment();
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    HideMapViewFragment();
                     return true;
             }
             return false;
@@ -33,21 +33,29 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    MapView mapView;
+    private void HideMapViewFragment()
+    {
+        View frag = findViewById(R.id.map_view_fragment);
+        frag.setVisibility(View.GONE);
+    }
+
+    private void ShowMapViewFragment()
+    {
+        View frag = findViewById(R.id.map_view_fragment);
+        frag.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDB = new DBHelper(this);
 
-//        mTextMessage = (TextView) findViewById(R.id.message);
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-        mapView = new MapView(this);
-        mapView.setBackgroundColor(Color.WHITE);
-        setContentView(mapView);
     }
 
 }
