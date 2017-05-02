@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     HideMapViewFragment();
                     return true;
-                case R.id.navigation_notifications:
-                    HideMapViewFragment();
-                    return true;
             }
             return false;
         }
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"first insert");
 
         myDB.insertStation(new SubwayStation("second", new PointF(200, 200), 2));
-//        Log.d(TAG,"second insert");
+        Log.d(TAG,"second insert");
 
     }
 
