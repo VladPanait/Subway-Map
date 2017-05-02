@@ -10,9 +10,11 @@ public class SubwayStation {
 
     private PointF P;
     private int ID;
+    private String name;
 
-    public SubwayStation(PointF P, int ID)
+    public SubwayStation(String name, PointF P, int ID)
     {
+        this.name = name;
         this.P = P;
         this.ID = ID;
     }
@@ -25,6 +27,11 @@ public class SubwayStation {
     public int getID()
     {
         return ID;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 
 

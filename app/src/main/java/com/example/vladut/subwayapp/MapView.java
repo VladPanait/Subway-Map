@@ -43,14 +43,14 @@ public class MapView extends View {
 
     public void AddArrayListValues()
     {
-        stations.add(new SubwayStation(new PointF(100, 100), 1));
-        stations.add(new SubwayStation(new PointF(200, 200), 2));
-        stations.add(new SubwayStation(new PointF(300, 300), 3));
-        stations.add(new SubwayStation(new PointF(300, 400), 4));
-        stations.add(new SubwayStation(new PointF(400, 500), 5));
-        stations.add(new SubwayStation(new PointF(500, 600), 6));
-        stations.add(new SubwayStation(new PointF(600, 700), 7));
-        stations.add(new SubwayStation(new PointF(100, 500), 8));
+        stations.add(new SubwayStation("first", new PointF(100, 100), 1));
+        stations.add(new SubwayStation("second", new PointF(200, 200), 2));
+        stations.add(new SubwayStation("third", new PointF(300, 300), 3));
+        stations.add(new SubwayStation("fourth", new PointF(300, 400), 4));
+        stations.add(new SubwayStation("fifth", new PointF(400, 500), 5));
+        stations.add(new SubwayStation("sixth", new PointF(500, 600), 6));
+        stations.add(new SubwayStation("seventh", new PointF(600, 700), 7));
+        stations.add(new SubwayStation("eighth", new PointF(100, 500), 8));
     }
 
 
