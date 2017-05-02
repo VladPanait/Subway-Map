@@ -34,6 +34,8 @@ public class SubwayStation {
         return name;
     }
 
-
+    public String writeSS(){
+        return "Nume: " + name + "; X: " + P.x;
+    }
 }
 

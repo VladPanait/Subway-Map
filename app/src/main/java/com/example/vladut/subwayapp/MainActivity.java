@@ -1,15 +1,20 @@
 package com.example.vladut.subwayapp;
 
+import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     DBHelper myDB;
+    private static final String TAG = "MainActivity";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,13 +54,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG,"OnCreate");
         setContentView(R.layout.activity_main);
         myDB = new DBHelper(this);
+        Log.d(TAG,"new DBHelper");
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        myDB.clearStationTable();
+        myDB.insertStation(new SubwayStation("first", new PointF(100, 100), 1));
+        Log.d(TAG,"first insert");
+
+        myDB.insertStation(new SubwayStation("second", new PointF(200, 200), 2));
+//        Log.d(TAG,"second insert");
 
     }
+
+
 
 }
