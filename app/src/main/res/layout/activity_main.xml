@@ -15,9 +15,8 @@
 
         <Button
             android:id="@+id/btnHelp"
-            android:layout_width="36dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/ic_info_black_24dp"
             android:onClick="bntHelpClick" />
@@ -35,6 +34,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout="@layout/map_fragment" />
+
+        <fragment
+            android:id="@+id/station_view_fragment"
+            android:name="com.example.vladut.subwayapp.StationViewFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/station_fragment" />
+
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView

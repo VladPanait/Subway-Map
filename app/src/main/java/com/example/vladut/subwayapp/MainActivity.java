@@ -29,15 +29,27 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     ShowMapViewFragment();
+                    HideStationFragment();
                     return true;
                 case R.id.navigation_dashboard:
                     HideMapViewFragment();
+                    ShowStationFragment();
                     return true;
             }
             return false;
         }
 
     };
+
+    private void HideStationFragment(){
+        View frag = findViewById(R.id.station_view_fragment);
+        frag.setVisibility(View.INVISIBLE);
+    }
+
+    private void ShowStationFragment(){
+        View frag = findViewById(R.id.station_view_fragment);
+        frag.setVisibility(View.VISIBLE);
+    }
 
     private void HideMapViewFragment()
     {
@@ -68,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        ShowMapViewFragment();
+        HideStationFragment();
 
         myDB.clearStationTable();
         myDB.insertStation(new SubwayStation("first", new PointF(100, 100)));

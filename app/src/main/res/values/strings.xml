@@ -4,4 +4,25 @@
     <string name="title_dashboard">Traseu</string>
     <string name="title_notifications">Gmap</string>
     <string name="title_activity_help">Help</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="stations_array">
+        <item>Preciziei</item>
+        <item>Pacii</item>
+        <item>Gorjului</item>
+        <item>Lujerului</item>
+        <item>Politehnica</item>
+        <item>Eroilor</item>
+        <item>Izvor</item>
+        <item>Piata Unirii</item>
+        <item>Timpuri noi</item>
+        <item>Mihai Bravu</item>
+        <item>Dristor</item>
+        <item>Nicolae Grigorescu</item>
+        <item>1 Decembrie 1918</item>
+        <item>Nicolae Teclu</item>
+        <item>Anghel Saligny</item>
+    </string-array>
 </resources>
