@@ -79,28 +79,28 @@ public class MapView extends View {
             Log.d(TAG, stations.get(i).writeSS());
             //Log.d(TAG, "table count: " + myDB.getTableRowCount());
 
-            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint1); //drawing the stations
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 15, myPaint1); //drawing the stations
             canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint1); //drawing the road between stations
         }
-        canvas.drawCircle(stations.get(14).getP().x, stations.get(stations.size()-1).getP().y, 20, myPaint1);
+        canvas.drawCircle(stations.get(14).getP().x, stations.get(14).getP().y, 15, myPaint1);
 
         for(int i=15; i<28; i++) {
             Log.d(TAG, stations.get(i).writeSS());
             //Log.d(TAG, "table count: " + myDB.getTableRowCount());
 
-            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint2); //drawing the stations
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 15, myPaint2); //drawing the stations
             canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint2); //drawing the road between stations
         }
-        canvas.drawCircle(stations.get(28).getP().x, stations.get(stations.size()-1).getP().y, 20, myPaint2);
+        canvas.drawCircle(stations.get(28).getP().x, stations.get(28).getP().y, 15, myPaint2);
 
         for(int i=29; i<50; i++) {
             Log.d(TAG, stations.get(i).writeSS());
             //Log.d(TAG, "table count: " + myDB.getTableRowCount());
 
-            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 10, myPaint3); //drawing the stations
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 8, myPaint3); //drawing the stations
             canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint3); //drawing the road between stations
         }
-        canvas.drawCircle(stations.get(50).getP().x, stations.get(stations.size()-1).getP().y, 10, myPaint3);
+        canvas.drawCircle(stations.get(50).getP().x, stations.get(stations.size()-1).getP().y, 8, myPaint3);
 
 
 
