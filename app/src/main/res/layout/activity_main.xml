@@ -5,8 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.vladut.subwayapp.MainActivity">
+    tools:context="com.example.vladut.subwayapp.MainActivity"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
