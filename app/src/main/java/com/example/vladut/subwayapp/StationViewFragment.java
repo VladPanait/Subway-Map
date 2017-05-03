@@ -32,6 +32,7 @@ public class StationViewFragment extends Fragment {
         final String M1 = "M1";
         final String M2 = "M2";
         final String M3 = "M3";
+        final String M4 = "M4";
         mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String text = mySpinner.getSelectedItem().toString();
@@ -47,6 +48,10 @@ public class StationViewFragment extends Fragment {
                 else if(text.compareTo(M3) == 0) {
                     Log.d(TAG, "timeOnM3");
                     timeOnM3(myView);
+                }
+                else if(text.compareTo(M4) == 0) {
+                    Log.d(TAG, "timeOnM4");
+                    timeOnM4(myView);
                 }
             }
 
@@ -567,6 +572,46 @@ public class StationViewFragment extends Fragment {
         tv2.setText(finish + printStringStart);
         tv2.setBackgroundColor(Color.BLACK);
         tv2.setTextColor(Color.RED);
+        tv2.setTextSize(50);
+
+    }
+
+
+    public void timeOnM4(View myView)
+    {
+        String start = "Gara de Nord 2 - ";
+        String finish = "Straulesti - ";
+
+        String printStringStart = "";
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int minute = Calendar.getInstance().get(Calendar.MINUTE);
+        int nextTrain = 0;
+        int curentTime = hour*60+minute;
+
+        if(curentTime > 5*60 && curentTime < 23*60 + 30)
+        {
+            nextTrain = 5*60;
+            while(nextTrain <= curentTime)
+            {
+                nextTrain += 11;
+            }
+            printStringStart += nextTrain/60;
+            printStringStart += ":";
+            if(nextTrain%60 < 10)
+                printStringStart += "0";
+            printStringStart += nextTrain%60;
+        }
+
+        TextView tv = (TextView)myView.findViewById(R.id.direction_1);
+        tv.setText(start + printStringStart);
+        tv.setBackgroundColor(Color.BLACK);
+        tv.setTextColor(Color.GREEN);
+        tv.setTextSize(50);
+
+        TextView tv2 = (TextView)myView.findViewById(R.id.direction_2);
+        tv2.setText(finish + printStringStart);
+        tv2.setBackgroundColor(Color.BLACK);
+        tv2.setTextColor(Color.GREEN);
         tv2.setTextSize(50);
 
     }
