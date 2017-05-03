@@ -12,11 +12,11 @@ public class SubwayStation {
     private int ID;
     private String name;
 
-    public SubwayStation(String name, PointF P, int ID)
+    public SubwayStation(String name, PointF P)
     {
         this.name = name;
         this.P = P;
-        this.ID = ID;
+        //this.ID = ID;
     }
 
     public PointF getP()

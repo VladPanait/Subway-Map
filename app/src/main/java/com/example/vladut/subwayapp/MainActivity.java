@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         myDB.clearStationTable();
-        myDB.insertStation(new SubwayStation("first", new PointF(100, 100), 1));
+        myDB.insertStation(new SubwayStation("first", new PointF(100, 100)));
         Log.d(TAG,"first insert");
 
-        myDB.insertStation(new SubwayStation("second", new PointF(200, 200), 2));
+        myDB.insertStation(new SubwayStation("second", new PointF(200, 500)));
         Log.d(TAG,"second insert");
 
     }
