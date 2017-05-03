@@ -32,6 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String STATION_COL_COORD_X = "COORDX";
     private static final String STATION_COL_COORD_Y = "COORDY";
     private static final String STATION_ROUTE = "ROUTE";
+    private static final String ROUTE_M = "M";
 
     private static final String DB_NAME = "map.db";
     private static final int DB_VERSION = 1;
@@ -62,8 +63,13 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(STATION_COL_NAME, station.getName());
         values.put(STATION_COL_X, station.getP().x);
         values.put(STATION_COL_Y, station.getP().y);
+//        values.put(STATION_COL_COORD_X, (float)station.getCoordX());
+//        values.put(STATION_COL_COORD_Y, (float)station.getCoordY());
+//        values.put(ROUTE_M, station.getRoute());
 
         long result = db.insert(TABLE_NAME_STATIONS, null, values);
+
+        Log.d(TAG, "insert value: " + result);
 
         if(result == -1)
         {
@@ -128,10 +134,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public ArrayList<SubwayStation> ArrayListStations()
     {
+
         Cursor cursor = getAllStations();
         if (cursor.getCount() == 0)
         {
-            //error message
+            Log.d(TAG, "getCount = 0");
             return null;
         }
         ArrayList<SubwayStation> allStations = new ArrayList<>();
@@ -139,7 +146,8 @@ public class DBHelper extends SQLiteOpenHelper {
         {
             SubwayStation ss = new SubwayStation(cursor.getString(1), new PointF(cursor.getFloat(2), cursor.getFloat(3)));
             allStations.add(ss);
-        }
+            Log.d(TAG, ss.writeSS());
+       }
         return allStations;
     }
 

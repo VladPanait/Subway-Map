@@ -17,7 +17,9 @@ import java.util.*;
 public class MapView extends View {
     private static final String TAG = "MapView";
 
-    Paint myPaint = new Paint();
+    Paint myPaint1 = new Paint();
+    Paint myPaint2 = new Paint();
+    Paint myPaint3 = new Paint();
     DBHelper myDB = new DBHelper(getContext());
 
     ArrayList<SubwayStation> stations = new ArrayList<>();
@@ -38,9 +40,15 @@ public class MapView extends View {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle) {
-        myPaint.setColor(Color.BLACK);
-        myPaint.setStrokeWidth(10);
-        myPaint.setColor(0xffff0000);
+        myPaint1.setColor(Color.BLACK);
+        myPaint2.setColor(Color.BLACK);
+        myPaint3.setColor(Color.BLACK);
+        myPaint1.setStrokeWidth(10);
+        myPaint2.setStrokeWidth(10);
+        myPaint3.setStrokeWidth(5);
+        myPaint1.setColor(Color.RED);
+        myPaint2.setColor(Color.BLUE);
+        myPaint3.setColor(Color.YELLOW);
     }
 
     public MapView(Context context) {
@@ -67,14 +75,37 @@ public class MapView extends View {
     public void onDraw(Canvas canvas) {
 //        stations.clear();
 //        AddArrayListValues();
-        for(int i=0; i<stations.size()-1; i++) {
+        for(int i=0; i<14; i++) {
             Log.d(TAG, stations.get(i).writeSS());
             //Log.d(TAG, "table count: " + myDB.getTableRowCount());
 
-            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint); //drawing the stations
-            canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint); //drawing the road between stations
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint1); //drawing the stations
+            canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint1); //drawing the road between stations
         }
-        canvas.drawCircle(stations.get(stations.size()-1).getP().x, stations.get(stations.size()-1).getP().y, 20, myPaint);
+        canvas.drawCircle(stations.get(14).getP().x, stations.get(stations.size()-1).getP().y, 20, myPaint1);
+
+        for(int i=15; i<28; i++) {
+            Log.d(TAG, stations.get(i).writeSS());
+            //Log.d(TAG, "table count: " + myDB.getTableRowCount());
+
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 20, myPaint2); //drawing the stations
+            canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint2); //drawing the road between stations
+        }
+        canvas.drawCircle(stations.get(28).getP().x, stations.get(stations.size()-1).getP().y, 20, myPaint2);
+
+        for(int i=29; i<50; i++) {
+            Log.d(TAG, stations.get(i).writeSS());
+            //Log.d(TAG, "table count: " + myDB.getTableRowCount());
+
+            canvas.drawCircle(stations.get(i).getP().x, stations.get(i).getP().y, 10, myPaint3); //drawing the stations
+            canvas.drawLine(stations.get(i).getP().x, stations.get(i).getP().y, stations.get(i + 1).getP().x, stations.get(i + 1).getP().y, myPaint3); //drawing the road between stations
+        }
+        canvas.drawCircle(stations.get(50).getP().x, stations.get(stations.size()-1).getP().y, 10, myPaint3);
+
+
+
+
+
     }
 
 }

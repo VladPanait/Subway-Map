@@ -11,11 +11,17 @@ public class SubwayStation {
     private PointF P;
     private int ID;
     private String name;
+    private double coordX;
+    private double coordY;
+//    private int route;
 
     public SubwayStation(String name, PointF P)
     {
         this.name = name;
         this.P = P;
+//        this.coordX = coordX;
+//        this.coordY = coordY;
+//        this.route = route;
         //this.ID = ID;
     }
 
@@ -27,6 +33,21 @@ public class SubwayStation {
     public int getID()
     {
         return ID;
+    }
+
+//    public int getRoute()
+//    {
+//        return route;
+//    }
+
+    public double getCoordX()
+    {
+        return coordX;
+    }
+
+    public double getCoordY()
+    {
+        return coordY;
     }
 
     public String getName()

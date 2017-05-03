@@ -109,7 +109,7 @@ public class HelpActivity extends FragmentActivity implements OnMapReadyCallback
         addMarkerM2(new LatLng(44.427654, 26.102633), "Unirii M2", 0);
         addMarkerM2(new LatLng(44.414758, 26.104665), "Tineretului", 0);
         addMarkerM2(new LatLng(44.404510, 26.096224), "Eroii Revolutiei", 0);
-        addMarkerM2(new LatLng(44.398730, 26.109078), "Constantin Brancoveanu", 0);
+        addMarkerM2(new LatLng(44.427654, 26.102633), "Constantin Brancoveanu", 0);
         addMarkerM2(new LatLng(44.392949, 26.122291), "Piata Sudului", 0);
         addMarkerM2(new LatLng(44.379593, 26.135372), "Aparatorii Patriei", 0);
         addMarkerM2(new LatLng(44.368914, 26.143660), "Dimitrie Leonida", 0);
